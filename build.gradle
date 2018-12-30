@@ -1,12 +1,27 @@
-plugins {
-    id 'java'
+buildscript {
+    dependencies {
+        classpath group: 'de.dynamicfiles.projects.gradle.plugins', name: 'javafx-gradle-plugin', version: '8.8.2'
+    }
+    repositories {
+        mavenLocal()
+        mavenCentral()
+    }
 }
 
 group 'uk.co.thecharlesblake.personal'
 version '1.0'
 
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+apply plugin: 'java'
+apply plugin: 'javafx-gradle-plugin'
+
 sourceCompatibility = 1.8
 
-repositories {
-    mavenCentral()
+jfx {
+    mainClass = 'uk.co.thecharlesblake.personal.warewolves.MainApp'
+    vendor = 'thecharlesblake'
 }
