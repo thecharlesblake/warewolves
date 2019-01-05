@@ -21,6 +21,11 @@ apply plugin: 'javafx-gradle-plugin'
 
 sourceCompatibility = 1.8
 
+dependencies {
+    implementation 'com.squareup.okhttp3:okhttp:3.12.1'
+    compile 'org.json:json:20180813'
+}
+
 jfx {
     mainClass = 'uk.co.thecharlesblake.personal.warewolves.MainApp'
     vendor = 'thecharlesblake'

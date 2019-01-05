@@ -7,6 +7,8 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
+import uk.co.thecharlesblake.personal.warewolves.model.Model;
+import uk.co.thecharlesblake.personal.warewolves.view.RootLayoutController;
 
 import java.io.File;
 import java.io.IOException;
@@ -43,6 +45,9 @@ public class MainApp extends Application {
             // Show the scene containing the root layout.
             Scene scene = new Scene(rootLayout);
             primaryStage.setScene(scene);
+
+            RootLayoutController controller = loader.getController();
+            primaryStage.setOnShown(e -> controller.setup());
 
             primaryStage.show();
         } catch (IOException e) {
